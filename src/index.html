@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body class="bg-gray-200 flex items-center justify-center min-h-screen">
+
+    <form onsubmit="handleSubmit(event)">
+        <div class="bg-white rounded-lg shadow-lg flex flex-col md:flex-row w-full max-w-4xl overflow-hidden mx-auto" id="div1">
+            <div class="bg-indigo-800 text-white p-12 w-full md:w-2/5 flex flex-col justify-start" id="div2">
+                <h1 class="text-3xl animate-pulse mb-4 text-center" id="h1">Hello, DRJ!</h1>
+                <div class="bg-indigo-700 p-6 rounded-lg text-center mt-4 mb-4" id="div3">
+                    <p id="total">Total: ₹0.00</p>
+                </div>
+                <div class="bg-indigo-600 rounded-lg p-8 shadow-lg text-left mt-3 w-full overflow-" id="div4">
+                    <h3 class="text-lg mb-4" id="h2">Breakdown :</h3>
+                    
+                    <ul id="ul1" class="text-white overflow-clip"></ul>
+                </div>
+            </div>
+            <div class="p-8 w-full md:w-3/5" id="div5">
+                <div class="flex items-center shadow-lg rounded-lg" id="div6">
+                    <img src="./img/myFriendGanesha.jpg" alt="Profile Picture" class="rounded-full w-20 h-20 mr-6 animate-pulse">
+                    <h2 class="text-3xl font-bold animate-pulse text-indigo-900 " id="h3">Dhiraj Singh</h2>
+                </div>
+                <div class="text-right mt-4" id="div7">
+                    <button class="bg-red-500 text-white rounded-lg px-4 py-2" id="signout">Sign Out</button>
+                </div>
+                <div class="mt-5 shadow-lg p-6 rounded-lg mb-4 " id="div8">
+                    
+                    <input type="text" placeholder="Expense Name" class="w-full p-4 mb-4 border border-gray-300 rounded-lg" id="item">
+                    <input type="number" placeholder="₹" class="w-full p-4 mb-4 border border-gray-300 rounded-lg" id="price">
+                    <select class="w-fit p-4 mb-5 border border-gray-300 rounded-lg" id="category" required>
+                        <option value="select" placeholder="select"></option>
+                        <option value="food">Food/Beverage</option>
+                        <option value="travel">Travel/Commute</option>
+                        <option value="shopping">Shopping</option>
+                    </select>
+
+                    
+
+                </div>
+                <button class="bg-indigo-800 text-white w-full p-4 rounded-lg" id="submit" type="submit">Add Expense</button>
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</body>
+</html>
