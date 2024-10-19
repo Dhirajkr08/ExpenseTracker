@@ -114,7 +114,7 @@ async function editFunction(userDetails,uniqueId,list) {
                 category:document.getElementById("category").value,
             }
             localStorage.setItem(currentId,JSON.stringify(editedDetails))
-            totalAmount()
+            totalAmount();
     
             list.innerHTML=list.innerHTML=`🛍️${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
             <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
@@ -182,3 +182,5 @@ async function totalAmount() {
         console.log("Something went wrong in totalAmount", err);
     }
 }
+// DhirajKr
+
