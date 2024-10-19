@@ -61,7 +61,7 @@ async function displayData(userId,expenseDetails){
 
         //create list to display data
         const list=document.createElement('li')
-        list.className="bg-blue-300 shadow-lg rounded-lg p-4 mb-2"
+        list.className="bg-blue-300 shadow-lg rounded-lg p-6 mb-2"
         list.innerHTML=`
                     <span style="font-size: 24px;">🛍️: ${expenseDetails.item}</span>
                     <span style="font-size: 20px;">₹: ${expenseDetails.price}</span><br>
