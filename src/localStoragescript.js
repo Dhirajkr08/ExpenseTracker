@@ -16,9 +16,9 @@ async function handleSubmit(e){
         if(userDetails.item && userDetails.price && userDetails.category){
 
             //post data on api
-            //let res=await axios.post("https://crudcrud.com/api/827186736e5e45858d08a4cc77784778/eTracker",userDetails)
-            //console.log(res.data)
-            // const userId=res.data._id
+            let res=await axios.post("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker",userDetails)
+            console.log(res.data)
+            const userId=res.data._id
             
             
 
@@ -49,8 +49,9 @@ async function displayData(userDetails,uniqueId){
     try{
         //get data from api
         
-        //let res= await axios.get("https://crudcrud.com/api/827186736e5e45858d08a4cc77784778/eTracker")
-        //console.log(res.data)
+        let res= await axios.get("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker")
+        console.log(res.data)
+        
 
         let list=document.createElement("li")
         list.className="bg-indigo-300 shadow-lg mb-2 p-4 rounded-lg text-center overflow-hidden"
