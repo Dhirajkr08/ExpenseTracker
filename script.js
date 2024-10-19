@@ -32,16 +32,14 @@ function clearInputs() {
 async function displayData(userId, expenseDetails) {
     try {
         const list = document.createElement('li');
-<<<<<<< HEAD
-        list.className = "bg-blue-300 shadow-2xl rounded-lg p-5  flex-col sm:flex-row sm:justify-between items-center mb-2";
-=======
-        list.className = "bg-blue-300 shadow-2xl rounded-lg p-5 flex flex-col sm:flex-row sm:justify-between items-center mb-2";
->>>>>>> 569a13609008dda6838f01f2268927415aae4d28
+
+        list.className = "bg-blue-300 shadow-2xl rounded-lg p-5 flex-col sm:flex-row  items-center mb-2";
+
         list.innerHTML = `
             <span style="font-size: 24px;">️🛍️:${expenseDetails.item}</span>
             <span style="font-size: 20px;">₹: ${expenseDetails.price}</span><br>
             ${expenseDetails.category} 
-            <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
+            <button type="button" class="del bg-red-500 rounded-lg float-right justify-center p-2  ml-1">X</button>
             <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
         `;
         document.getElementById('ul1').appendChild(list);
