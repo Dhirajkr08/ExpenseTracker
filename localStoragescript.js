@@ -127,7 +127,7 @@ async function editFunction(userDetails,uniqueId,list) {
     
             const editBtn=list.querySelector('.edit')
             editBtn.addEventListener('click', function(){
-                editFunction(userDetails,currentId,list)
+                editFunction(editedDetails,currentId,list)
             })
             // Clear input fields after submission
             document.getElementById("item").value = ""; 
