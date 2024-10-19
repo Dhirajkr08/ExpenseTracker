@@ -16,9 +16,9 @@ async function handleSubmit(e){
         if(userDetails.item && userDetails.price && userDetails.category){
 
             //post data on api
-            let res=await axios.post("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker",userDetails)
-            console.log(res.data)
-            const userId=res.data._id
+            //let res=await axios.post("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker",userDetails)
+            //console.log(res.data)
+            //const userId=res.data._id
             
             
 
