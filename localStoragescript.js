@@ -49,8 +49,8 @@ async function displayData(userDetails,uniqueId){
     try{
         //get data from api
         
-        let res= await axios.get("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker")
-        console.log(res.data)
+        //let res= await axios.get("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker")
+        //console.log(res.data)
         
 
         let list=document.createElement("li")
@@ -166,17 +166,19 @@ async function loaded() {
     
     
 }
-async function totalAmount(){
-    try{
-        let total=0
-        for(let i=0;i<localStorage.length;i++){
-            const data=localStorage.key(i)
-            const details=JSON.parse(localStorage.getItem(data))
-            total += parseInt(details.price)
+async function totalAmount() {
+    try {
+        let total = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            const data = localStorage.key(i);
+            const details = JSON.parse(localStorage.getItem(data));
+            
+            if (details && details.price) {
+                total += parseInt(details.price);
+            }
         }
-        document.getElementById('total').innerHTML= `Total: ₹${total}`
-    }
-    catch(err){
-        console.log(err)
+        document.getElementById('total').innerHTML = `Total: ₹${total}`;
+    } catch (err) {
+        console.log("Something went wrong in totalAmount", err);
     }
 }
