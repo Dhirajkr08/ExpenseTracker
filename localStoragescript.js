@@ -16,9 +16,9 @@ async function handleSubmit(e){
         if(userDetails.item && userDetails.price && userDetails.category){
 
             //post data on api
-            //let res=await axios.post("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker",userDetails)
-            //console.log(res.data)
-            //const userId=res.data._id
+            let res=await axios.post("https://crudcrud.com/api/d6141f82003340499d4db7e0a581122b/eTracker",userDetails)
+            console.log(res.data)
+            const userId=res.data._id
             
             
 
@@ -55,7 +55,7 @@ async function displayData(userDetails,uniqueId){
 
         let list=document.createElement("li")
         list.className="bg-indigo-300 shadow-lg mb-2 p-4 rounded-lg text-center overflow-hidden"
-        list.innerHTML=`🛍️:${userDetails.item}, ₹: ${userDetails.price}, Category : ${userDetails.category}
+        list.innerHTML=`🛍️${userDetails.item}, ₹: ${userDetails.price}, Category : ${userDetails.category}
         <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
         <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
         `
@@ -116,7 +116,7 @@ async function editFunction(userDetails,uniqueId,list) {
             localStorage.setItem(currentId,JSON.stringify(editedDetails))
             totalAmount()
     
-            list.innerHTML=`🛍️:${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
+            list.innerHTML=list.innerHTML=`🛍️${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
             <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
             <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
             `
@@ -127,7 +127,7 @@ async function editFunction(userDetails,uniqueId,list) {
     
             const editBtn=list.querySelector('.edit')
             editBtn.addEventListener('click', function(){
-                editFunction(editedDetails,currentId,list)
+                editFunction(userDetails,currentId,list)
             })
             // Clear input fields after submission
             document.getElementById("item").value = ""; 
@@ -166,17 +166,19 @@ async function loaded() {
     
     
 }
-async function totalAmount(){
-    try{
-        let total=0
-        for(let i=0;i<localStorage.length;i++){
-            const data=localStorage.key(i)
-            const details=JSON.parse(localStorage.getItem(data))
-            total += parseInt(details.price)
+async function totalAmount() {
+    try {
+        let total = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            const data = localStorage.key(i);
+            const details = JSON.parse(localStorage.getItem(data));
+            
+            if (details && details.price) {
+                total += parseInt(details.price);
+            }
         }
-        document.getElementById('total').innerHTML= `Total: ₹${total}`
-    }
-    catch(err){
-        console.log(err)
+        document.getElementById('total').innerHTML = `Total: ₹${total}`;
+    } catch (err) {
+        console.log("Something went wrong in totalAmount", err);
     }
 }
