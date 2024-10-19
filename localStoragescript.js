@@ -116,7 +116,7 @@ async function editFunction(userDetails,uniqueId,list) {
             localStorage.setItem(currentId,JSON.stringify(editedDetails))
             totalAmount()
     
-            list.innerHTML=list.innerHTML=`🛍️:${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
+            list.innerHTML=`🛍️:${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
             <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
             <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
             `
@@ -127,7 +127,7 @@ async function editFunction(userDetails,uniqueId,list) {
     
             const editBtn=list.querySelector('.edit')
             editBtn.addEventListener('click', function(){
-                editFunction(userDetails,currentId,list)
+                editFunction(editedDetails,currentId,list)
             })
             // Clear input fields after submission
             document.getElementById("item").value = ""; 
