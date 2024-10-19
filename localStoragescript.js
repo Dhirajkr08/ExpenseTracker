@@ -55,7 +55,7 @@ async function displayData(userDetails,uniqueId){
 
         let list=document.createElement("li")
         list.className="bg-indigo-300 shadow-lg mb-2 p-4 rounded-lg text-center overflow-hidden"
-        list.innerHTML=`${userDetails.item}, ₹: ${userDetails.price}, Category : ${userDetails.category}
+        list.innerHTML=`🛍️${userDetails.item}, ₹: ${userDetails.price}, Category : ${userDetails.category}
         <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
         <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
         `
@@ -116,7 +116,7 @@ async function editFunction(userDetails,uniqueId,list) {
             localStorage.setItem(currentId,JSON.stringify(editedDetails))
             totalAmount()
     
-            list.innerHTML=list.innerHTML=`${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
+            list.innerHTML=list.innerHTML=`🛍️${editedDetails.item}, ₹: ${editedDetails.price}, Category : ${editedDetails.category}
             <button type="button" class="del bg-red-500 rounded-lg float-right p-2  ml-1">X</button>
             <button type="button" class="edit text-white bg-green-300 p-2 rounded-lg float-right">✎</button>
             `
